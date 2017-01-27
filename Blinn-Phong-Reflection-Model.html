@@ -5,8 +5,6 @@
     ==  File name:		Blinn-Phong-Reflection-Model.html
     ==  Author:		  	Zachery Glass
     ==  Date: 		  	3/31/2016
-    == 	Description:	This program demonstrates the Blinn-Phong Reflection Model of lighting with a moving point 
-    ==					light source illuminating a stationary triangle as the point light source rotates around it.
     -->
 
   <head>
@@ -261,18 +259,91 @@
       // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     </script>
 
-    <!-- ================================================================ -->
+  <!-- ================================================================ -->
+
+  <style>
+
+  body {
+    background: #e3e3e3;
+    margin-top: 80px;
+  }
+
+  #container {
+      display: inline-block;
+      position: relative;
+      width: 40%;
+      float: left;
+  }
+
+  #dummy {
+      margin-top: 100%; /* 1 aspect ratio */
+  }
+
+  #element {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: silver; /* show me! */
+      margin-left: 10px;
+  }
+
+  #glCanvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  #instructions {
+    position: absolute;
+    right: 5%;
+    width: 50%;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  table, tr {
+    border: 1px black solid;
+  }
+
+  tr:nth-child(even) {
+      background-color: white;
+  }
+
+  .button {
+    background-color: ForestGreen;  
+    border-radius: 5px;
+    color: white;
+    padding: .5em;
+    text-decoration: none;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 22px;
+  }
+
+  .button:focus,
+  .button:hover {
+    background-color: DarkGreen;
+  }
+
+  </style>
   </head>
   <body>
+    <a href="https://github.com/ZacheryGlass/Blinn-Phong-Reflection-Model" class="button" role="button">
+        Return to Source Code
+    </a>
 
+    <div id="container">
+      <div id="dummy"></div>
+      <div id="element">
+          <canvas id='glCanvas' width="800" height="800"></canvas>
+      </div>
+    </div>
 
-
-    <table style="width:100%">
+    <table id="instructions">
       <tr>
-        <td><canvas id='glCanvas' width='500' height='500' style="padding: 15px">
-            </canvas>
-      </td>
-        <td style="font-size:26px">
+        <td>
           This program illustrates the Blinn-Phong Reflection Model, which is also knows as the Modified Phong Reflectoin Model.
           <br><br>
           A "point" light source travels in a circular orbit around a triangle illuminating the front face of that triangle.
@@ -283,6 +354,5 @@
         </td>
       </tr>
     </table>
-  </body>
-
+    </body>
 </html>
